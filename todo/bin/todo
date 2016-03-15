@@ -2,3 +2,4 @@
 
 require "todo"
 
+Todo::Command.run(ARGV)

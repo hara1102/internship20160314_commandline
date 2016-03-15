@@ -6,7 +6,17 @@ module Todo
   #@author sugamasao
   class Command  
     
+    def self.run(argv)
+      new(argv).execute
+    end
+    
+    def initialize(argv)
+      @argv = argv
+    end
+    
     def execute
+      options = Options.parse!(@argv)
+      
       DB.prepare
     end
     
@@ -41,6 +51,8 @@ module Todo
         all_tasks
       end
     end
+    
+    
         
         
   end
