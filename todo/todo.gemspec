@@ -9,9 +9,9 @@ Gem::Specification.new do |spec|
   spec.authors       = ["hara1102"]
   spec.email         = ["yamatoharakobe@gmail.com"]
 
-  spec.summary       = %q{TODO: management tool}
-  spec.description   = %q{TODO: management tool created by Perfect Ruby Team.}
-  spec.homepage      = "TODO: Put your gem's website or public repo URL here."
+  spec.summary       = %q{management tool}
+  spec.description   = %q{management tool created by Perfect Ruby Team.}
+  spec.homepage      = "https://github.com/hara1102/internship_201603.git"
   spec.license       = "MIT"
 
   # Prevent pushing this gem to RubyGems.org by setting 'allowed_push_host', or

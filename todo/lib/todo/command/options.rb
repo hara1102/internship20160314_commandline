@@ -20,14 +20,16 @@ module Todo
           options[:command] = argv.shift
           
           sub_command_parsers[options[:command]].parse!(argv)
+  
           #updateとdeleteの場合はidを取得する
           if %w(update delete).include?(options[:command])
             raise ArgumentError, "#{options[:command]} id not found."if argv.empty?
-            options[:id] = Integer(argv,first)
+            options[:id] = Integer(argv.first)
           end
           rescue OptionParser::MissingArgument, OptionParser::InvalidOption, ArgumentError => e
-          abort e.message
+            abort e.message
         end
+        options
       end
       
       def self.create_sub_command_parsers(options)
@@ -99,7 +101,7 @@ module Todo
           end
         end
       end
-      privete_class_method :create_sub_command_parsers, :create_command_parser, :help_sub_command
+      private_class_method :create_sub_command_parsers, :create_command_parser, :help_sub_command
     end
   end
 end
